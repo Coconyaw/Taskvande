@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="icon" href="./asset/favicon.ico">
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+		<link rel="stylesheet" href="./css/admin.css">
+		<title>Taskvande</title>
+	</head>
+	<body>
+		<div id="app">
+			<div class="columns is-fullheight">
+				<drawer @set-main-component="setMainComponent" class="is-fullheight"></drawer>
+				<main class="column main">
+				<!-- buefy component goes here -->
+					<toolbar :current-main-component="currentMainComponent"></toolbar>
+					<component v-bind:is="currentMainComponent" :key="updated"></component>
+				</main>
+			</div>
+		</div>
+		<!-- Modules -->
+		<script src="./modules/lodash.js"></script>
+		<script src="./modules/moment.js"></script>
+		<script src="./modules/axios.min.js"></script>
+		<script src="./modules/vue.js"></script>
+		<script src="./modules/buefy.min.js"></script>
+		<script src="./modules/Chart.min.js"></script>
+		<script src="./modules/vue-chartjs.min.js"></script>
+		<script src="./modules/marked.min.js"></script>
+
+		<!-- General script -->
+		<script src="./utils/util.js"></script>
+		<script src="./store/store.js"></script>
+
+		<!-- Compnents -->
+		<!-- core component -->
+		<script src="./component/layout/drawer.js"></script>
+		<script src="./component/layout/toolbar.js"></script>
+		<script src="./component/core/modal.js"></script>
+		<!-- main component -->
+		<script src="./component/main/dashboard.js"></script>
+		<script src="./component/main/listtable.js"></script>
+		<script src="./component/main/calendar.js"></script>
+		<!-- vue instance -->
+		<script src="./component/app.js"></script>
+	</body>
+</html>
